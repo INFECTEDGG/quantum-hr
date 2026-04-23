@@ -23,36 +23,35 @@ const Hero = () => {
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-4 py-1.5 backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
               <span className="text-xs font-medium tracking-wide text-muted-foreground">
-                AI-NATIVE PEOPLE STRATEGY · SINCE 2019
+                AI ENABLEMENT FÜR HR & PEOPLE OPERATIONS
               </span>
             </div>
 
             <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight">
-              The future of HR is{" "}
-              <span className="text-gradient">intelligent,</span>{" "}
-              <span className="italic font-light text-muted-foreground">human-led.</span>
+              KI im HR ist{" "}
+              <span className="text-gradient">pragmatisch,</span>{" "}
+              <span className="italic font-light text-muted-foreground">sicher & befähigend.</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Aetheris pairs senior HR consultants with proprietary AI to redesign
-              hiring, performance, and workforce planning for Fortune 500 enterprises.
+              AI Enable IT GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI. Wir befähigen Ihre HR-Abteilungen, Prozesse zu automatisieren und sich wieder auf den Menschen zu fokussieren.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="hero" size="lg">
-                Book a strategy call
+                Beratungsgespräch vereinbaren
                 <ArrowRight />
               </Button>
               <Button variant="glass" size="lg">
-                See the platform
+                Mehr erfahren
               </Button>
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
               {[
-                { k: "240+", v: "Enterprise clients" },
-                { k: "38%", v: "Avg. time-to-hire cut" },
-                { k: "$2.1B", v: "Workforce optimized" },
+                { k: "50%", v: "Zeitersparnis bei Admin" },
+                { k: "100%", v: "DSGVO-konform" },
+                { k: "KMU", v: "Fokus auf Mittelstand" },
               ].map((s) => (
                 <div key={s.v}>
                   <div className="font-display text-2xl md:text-3xl font-semibold text-gradient">

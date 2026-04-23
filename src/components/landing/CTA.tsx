@@ -16,22 +16,21 @@ const CTA = () => {
           <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
           <div className="relative max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Get started</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Jetzt starten</p>
             <h2 className="mt-4 font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Build the people org of the{" "}
-              <span className="text-gradient">next decade.</span>
+              Machen Sie Ihre Personalabteilung{" "}
+              <span className="text-gradient">KI-ready.</span>
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              45-minute strategy call with a senior partner. We'll share a tailored
-              workforce intelligence brief — no obligations.
+              Vereinbaren Sie ein kostenloses Erstgespräch. Wir besprechen Ihre Automatisierungspotenziale und einen Fahrplan für sicheres KI-Enablement.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="hero" size="lg">
-                Book strategy call
+                Erstgespräch buchen
                 <ArrowRight />
               </Button>
               <Button variant="glass" size="lg">
-                Download capabilities deck
+                Whitepaper herunterladen
               </Button>
             </div>
           </div>

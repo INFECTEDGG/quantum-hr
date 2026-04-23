@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const cases = [
   {
-    sector: "Global Bank · 84,000 employees",
-    title: "Cut time-to-hire by 41% across 12 markets",
-    metric: "41%",
-    label: "faster hiring",
+    sector: "Produktionsunternehmen · 800 Mitarbeiter",
+    title: "Zeitersparnis bei administrativen HR-Prozessen und Zeugniserstellung",
+    metric: "50%",
+    label: "schnellerer Prozess",
   },
   {
-    sector: "SaaS Leader · 12,000 employees",
-    title: "Predicted attrition 6 months ahead, retained $54M in talent",
-    metric: "$54M",
-    label: "retained talent",
+    sector: "Mittelständischer Dienstleister · 300 Mitarbeiter",
+    title: "Implementierung einer DSGVO-konformen KI-Schnittstelle ohne Schatten-IT",
+    metric: "100%",
+    label: "DSGVO-konform",
   },
   {
-    sector: "Industrial Group · 60,000 employees",
-    title: "Redesigned org for AI adoption — 3.2x productivity in pilot teams",
-    metric: "3.2×",
-    label: "productivity uplift",
+    sector: "Handelsgruppe · 1.500 Mitarbeiter",
+    title: "Null-Fehler-Quote beim Datenschutz dank Human-in-the-Loop-Workflows",
+    metric: "0",
+    label: "Datenschutzfehler",
   },
 ];
 
@@ -27,14 +27,14 @@ const CaseStudies = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 max-w-5xl">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Impact</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Erfolge</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight">
-              Outcomes that show up{" "}
-              <span className="text-gradient">on the balance sheet.</span>
+              Messbare Resultate für{" "}
+              <span className="text-gradient">die Personalabteilung.</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            A selection of recent transformations with our enterprise clients.
+            Einblicke aus unseren jüngsten Projekten im deutschsprachigen Mittelstand.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const CaseStudies = () => {
                 {c.title}
               </h3>
               <div className="mt-8 pt-6 border-t border-border flex items-center justify-between text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                <span>Read case study</span>
+                <span>Fallstudie lesen</span>
                 <span aria-hidden>→</span>
               </div>
             </motion.article>
