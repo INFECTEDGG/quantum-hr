@@ -11,7 +11,7 @@ import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Aetheris — AI-Native HR Consulting for Enterprise";
+    document.title = "People & Prompts — KI-Enablement für HR & People Operations";
 
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
@@ -24,7 +24,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "Aetheris pairs senior HR consultants with proprietary AI to redesign hiring, performance and workforce planning for Fortune 500 enterprises."
+      "People & Prompts begleitet den Mittelstand bei der DSGVO-konformen Integration von KI in HR-Prozesse."
     );
 
     let canonical = document.querySelector('link[rel="canonical"]');

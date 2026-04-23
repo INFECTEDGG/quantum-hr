@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#process", label: "Method" },
-  { href: "#impact", label: "Impact" },
-  { href: "#contact", label: "Contact" },
+  { href: "#services", label: "Leistungen" },
+  { href: "#process", label: "Prozess" },
+  { href: "#impact", label: "Erfolge" },
+  { href: "#contact", label: "Kontakt" },
 ];
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
             <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
-            Aetheris<span className="text-primary-glow">.</span>
+            People & Prompts<span className="text-primary-glow">.</span>
           </span>
         </a>
 
@@ -52,10 +52,10 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <Button variant="ghost" size="sm">
-            Sign in
+            Login
           </Button>
           <Button variant="hero" size="sm">
-            Book a call
+            Gespräch buchen
           </Button>
         </div>
 

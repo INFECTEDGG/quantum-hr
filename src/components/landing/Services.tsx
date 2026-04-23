@@ -4,35 +4,35 @@ import { Brain, Users, LineChart, Compass, ShieldCheck, Workflow } from "lucide-
 const services = [
   {
     icon: Brain,
-    title: "AI Talent Intelligence",
-    desc: "Predictive sourcing, candidate scoring and skills mapping powered by our proprietary models.",
+    title: "AI Enablement für HR",
+    desc: "Training und Onboarding für generatives Prompt Engineering bei Stellenanzeigen, Zeugnissen und Bewerber-Screening.",
     span: "md:col-span-2",
   },
   {
     icon: Users,
-    title: "Leadership & Culture",
-    desc: "Executive coaching grounded in behavioral data.",
+    title: "Business Process Automation",
+    desc: "Automatisierungspotenziale in ATS und HR-Software identifizieren und maßgeschneiderte KI-Tools integrieren.",
   },
   {
     icon: LineChart,
-    title: "Workforce Analytics",
-    desc: "Real-time dashboards on engagement, attrition risk, and ROI of every people decision.",
+    title: "Strategische KI-Compliance",
+    desc: "Auswahl DSGVO-konformer LLMs und Aufbau sicherer, unternehmensinterner KI-Schnittstellen gegen Schatten-IT.",
   },
   {
     icon: Compass,
-    title: "Org Design",
-    desc: "Restructure for AI-augmented teams without losing institutional knowledge.",
+    title: "Workshops & Audits",
+    desc: "HR AI Readiness Audits zur Identifikation von Potenzialen in den Personalprozessen und Bewertung von Datenschutzrisiken.",
     span: "md:col-span-2",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance & Ethics",
-    desc: "Audit-ready AI governance frameworks across 40+ jurisdictions.",
+    title: "Transformation Begleitung",
+    desc: "Etablierung von Human-in-the-Loop-Prozessen, um Risiken wie KI-Biases ethisch vertretbar zu minimieren.",
   },
   {
     icon: Workflow,
-    title: "Transformation PMO",
-    desc: "Embedded consultants drive end-to-end people transformations from day 1 to year 3.",
+    title: "API & Integration",
+    desc: "Wartung und API-Bereitstellung von internen KI-Tools zur sicheren Verbindung bestehender Systeme.",
     span: "md:col-span-2",
   },
 ];
@@ -44,12 +44,11 @@ const Services = () => {
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Services</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight">
-            Six practices.{" "}
-            <span className="text-gradient">One operating system</span> for people.
+            Drei Schwerpunkte.{" "}
+            <span className="text-gradient">Eine Vision</span> für den Mittelstand.
           </h2>
           <p className="mt-5 text-muted-foreground text-lg">
-            Every engagement combines a senior consulting partner with our Aetheris AI
-            platform — so insight moves at the speed of your business.
+            Unser Ansatz kombiniert strategische Beratung mit Hands-on Enablement – damit KI kein abstraktes IT-Thema bleibt, sondern produktiv genutzt wird.
           </p>
         </div>
 
