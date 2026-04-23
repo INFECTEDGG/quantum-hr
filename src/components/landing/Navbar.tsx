@@ -34,7 +34,7 @@ const Navbar = () => {
             <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
-            AI Enable IT<span className="text-primary-glow">.</span>
+            People & Prompts<span className="text-primary-glow">.</span>
           </span>
         </a>
 
