@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Footer from "@/components/landing/Footer";
 
 const Impressum = () => {
   useEffect(() => {
@@ -12,15 +11,7 @@ const Impressum = () => {
       <section className="relative overflow-hidden bg-hero noise pt-12 pb-20">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
         <div className="container relative">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow" />
-            RAWR
-          </Link>
-
-          <div className="mt-16 max-w-3xl">
+          <div className="mt-8 max-w-3xl">
             <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Rechtliches</p>
             <h1 className="mt-4 font-display text-5xl md:text-6xl font-semibold tracking-tight">
               Impressum
@@ -217,8 +208,6 @@ const Impressum = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };
