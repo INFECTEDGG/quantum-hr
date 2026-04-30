@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-ai-hr.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -38,9 +39,11 @@ const Hero = () => {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button variant="hero" size="lg">
-                Beratungsgespräch vereinbaren
-                <ArrowRight />
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/kontakt">
+                  Beratungsgespräch vereinbaren
+                  <ArrowRight />
+                </Link>
               </Button>
               <Button variant="glass" size="lg">
                 Mehr erfahren

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const links = [
   { href: "#services", label: "Leistungen" },
   { href: "#process", label: "Prozess" },
   { href: "#impact", label: "Erfolge" },
-  { href: "#contact", label: "Kontakt" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 const Navbar = () => {
@@ -40,13 +41,23 @@ const Navbar = () => {
 
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </a>
+            l.href.startsWith("/") ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            )
           ))}
         </nav>
 
@@ -54,8 +65,8 @@ const Navbar = () => {
           <Button variant="ghost" size="sm">
             Login
           </Button>
-          <Button variant="hero" size="sm">
-            Gespräch buchen
+          <Button variant="hero" size="sm" asChild>
+            <Link to="/kontakt">Gespräch buchen</Link>
           </Button>
         </div>
 
@@ -72,17 +83,28 @@ const Navbar = () => {
         <div className="md:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
-              >
-                {l.label}
-              </a>
+              l.href.startsWith("/") ? (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
+                >
+                  {l.label}
+                </a>
+              )
             ))}
-            <Button variant="hero" size="sm" className="mt-3">
-              Book a call
+            <Button variant="hero" size="sm" className="mt-3" asChild>
+              <Link to="/kontakt">Gespräch buchen</Link>
             </Button>
           </nav>
         </div>

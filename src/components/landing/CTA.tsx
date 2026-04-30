@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -25,9 +26,11 @@ const CTA = () => {
               Vereinbaren Sie ein kostenloses Erstgespräch. Wir besprechen Ihre Automatisierungspotenziale und einen Fahrplan für sicheres KI-Enablement.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button variant="hero" size="lg">
-                Erstgespräch buchen
-                <ArrowRight />
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/kontakt">
+                  Erstgespräch buchen
+                  <ArrowRight />
+                </Link>
               </Button>
               <Button variant="glass" size="lg">
                 Whitepaper herunterladen
