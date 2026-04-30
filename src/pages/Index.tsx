@@ -6,6 +6,7 @@ import Services from "@/components/landing/Services";
 import Process from "@/components/landing/Process";
 import CaseStudies from "@/components/landing/CaseStudies";
 import Testimonial from "@/components/landing/Testimonial";
+import FAQ from "@/components/landing/FAQ";
 import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 
@@ -45,6 +46,7 @@ const Index = () => {
       <Process />
       <CaseStudies />
       <Testimonial />
+      <FAQ />
       <CTA />
       <Footer />
     </main>
