@@ -4,9 +4,9 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const links = [
-  { href: "#services", label: "Leistungen" },
-  { href: "#process", label: "Prozess" },
-  { href: "#impact", label: "Erfolge" },
+  { href: "/#services", label: "Leistungen" },
+  { href: "/#process", label: "Prozess" },
+  { href: "/#impact", label: "Erfolge" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -30,34 +30,24 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <Link to="/" className="flex items-center gap-2.5 group">
           <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow">
             <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
             People & Prompts<span className="text-primary-glow">.</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            l.href.startsWith("/") ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </a>
-            )
+            <Link
+              key={l.href}
+              to={l.href}
+              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {l.label}
+            </Link>
           ))}
         </nav>
 
@@ -83,28 +73,17 @@ const Navbar = () => {
         <div className="md:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
-              l.href.startsWith("/") ? (
-                <Link
-                  key={l.href}
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                  className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
-                >
-                  {l.label}
-                </a>
-              )
+              <Link
+                key={l.href}
+                to={l.href}
+                onClick={() => setOpen(false)}
+                className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
+              >
+                {l.label}
+              </Link>
             ))}
             <Button variant="hero" size="sm" className="mt-3" asChild>
-              <Link to="/kontakt">Gespräch buchen</Link>
+              <Link to="/kontakt" onClick={() => setOpen(false)}>Gespräch buchen</Link>
             </Button>
           </nav>
         </div>

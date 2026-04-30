@@ -21,7 +21,7 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Bitte gib deinen Namen ein (min. 2 Zeichen)." }),
   email: z.string().email({ message: "Bitte gib eine gültige E-Mail-Adresse ein." }),
   company: z.string().optional(),
-  message: z.string().min(10, { message: "Deine Nachricht sollte mindestens 10 Zeichen lang sein." }),
+  message: z.string(),
 });
 
 export default function Contact() {
@@ -48,15 +48,13 @@ export default function Contact() {
       // Mock-Delay für UX (2 Sekunden)
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      // FaaS / Formspree Integration (Hier die echte URL eintragen)
-      /* 
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      // FaaS / Formspree Integration (Hier die echte URL eintragen) 
+      const response = await fetch("https://formspree.io/f/mdabnjjg", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
       if (!response.ok) throw new Error("Netzwerk Fehler");
-      */
 
       // Marketing / Tracking Simulation
       console.log("Analytics: Event 'generate_lead' gefeuert", values);
@@ -89,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mx-auto py-16 px-4 max-w-2xl">
+    <div className="container mx-auto pt-32 pb-16 px-4 max-w-2xl">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
       <div className="text-center mb-10">

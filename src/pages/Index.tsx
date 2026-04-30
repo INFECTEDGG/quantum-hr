@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navbar from "@/components/landing/Navbar";
+import { useLocation } from "react-router-dom";
 import Hero from "@/components/landing/Hero";
 import LogoCloud from "@/components/landing/LogoCloud";
 import Services from "@/components/landing/Services";
@@ -7,9 +7,23 @@ import Process from "@/components/landing/Process";
 import CaseStudies from "@/components/landing/CaseStudies";
 import Testimonial from "@/components/landing/Testimonial";
 import CTA from "@/components/landing/CTA";
-import Footer from "@/components/landing/Footer";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
   useEffect(() => {
     document.title = "People & Prompts — KI-Enablement für HR & People Operations";
 
@@ -37,8 +51,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Navbar />
+    <div className="w-full">
       <Hero />
       <LogoCloud />
       <Services />
@@ -46,8 +59,7 @@ const Index = () => {
       <CaseStudies />
       <Testimonial />
       <CTA />
-      <Footer />
-    </main>
+    </div>
   );
 };
 
