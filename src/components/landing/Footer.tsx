@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="relative border-t border-border py-14 bg-surface-1/40">
@@ -29,7 +31,8 @@ const Footer = () => {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li><a className="hover:text-foreground transition-colors" href="#">Webinare</a></li>
               <li><a className="hover:text-foreground transition-colors" href="#">Fallstudien</a></li>
-              <li><a className="hover:text-foreground transition-colors" href="#">Datenschutz</a></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/datenschutz">Datenschutz</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/impressum">Impressum</Link></li>
             </ul>
           </div>
         </div>
