@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RAWR — AI-powered HR consulting design system
+   Midnight Indigo palette. All colors HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 50% 5%;
+    --foreground: 230 30% 96%;
+
+    --card: 240 45% 8%;
+    --card-foreground: 230 30% 96%;
+
+    --popover: 240 50% 6%;
+    --popover-foreground: 230 30% 96%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 230 30% 98%;
+    --primary-glow: 250 90% 70%;
+
+    --secondary: 240 40% 14%;
+    --secondary-foreground: 230 30% 96%;
+
+    --muted: 240 30% 12%;
+    --muted-foreground: 230 15% 65%;
+
+    --accent: 250 90% 70%;
+    --accent-foreground: 240 50% 5%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 230 30% 98%;
+
+    --border: 240 35% 16%;
+    --input: 240 35% 16%;
+    --ring: 243 75% 59%;
+
+    --radius: 1rem;
+
+    /* Surfaces */
+    --surface-1: 240 45% 8%;
+    --surface-2: 240 40% 11%;
+    --surface-3: 240 38% 14%;
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse at top, hsl(243 75% 25% / 0.6), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(250 90% 35% / 0.4), transparent 50%),
+                     linear-gradient(180deg, hsl(240 50% 5%), hsl(240 55% 4%));
+    --gradient-primary: linear-gradient(135deg, hsl(243 75% 59%), hsl(250 90% 70%));
+    --gradient-aurora: linear-gradient(120deg, hsl(243 75% 59% / 0.15), hsl(250 90% 70% / 0.1), hsl(220 90% 60% / 0.15));
+    --gradient-card: linear-gradient(160deg, hsl(240 45% 10% / 0.9), hsl(240 50% 6% / 0.7));
+    --gradient-text: linear-gradient(135deg, hsl(230 30% 98%), hsl(250 90% 80%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px -10px hsl(243 75% 59% / 0.5);
+    --shadow-card: 0 20px 60px -20px hsl(240 80% 2% / 0.8);
+    --shadow-elegant: 0 30px 80px -30px hsl(243 75% 40% / 0.6);
+
+    /* Motion */
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 240 50% 5%;
+    --sidebar-foreground: 230 30% 96%;
+    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary-foreground: 230 30% 98%;
+    --sidebar-accent: 240 40% 14%;
+    --sidebar-accent-foreground: 230 30% 96%;
+    --sidebar-border: 240 35% 16%;
+    --sidebar-ring: 243 75% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-aurora {
+    background: var(--gradient-aurora);
+  }
+
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(243 75% 59% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(243 75% 59% / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+  }
+
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
