@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const links = [
-  { href: "/#services", label: "Leistungen" },
-  { href: "/#process", label: "Prozess" },
-  { href: "/#impact", label: "Erfolge" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "#services", label: "Services" },
+  { href: "#process", label: "Method" },
+  { href: "#impact", label: "Impact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -30,33 +29,33 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
+        <a href="#" className="flex items-center gap-2.5 group">
           <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow">
             <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
-            People & Prompts<span className="text-primary-glow">.</span>
+            RAWR<span className="text-primary-glow">.</span>
           </span>
-        </Link>
+        </a>
 
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            <Link
+            <a
               key={l.href}
-              to={l.href}
+              href={l.href}
               className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
           <Button variant="ghost" size="sm">
-            Login
+            Sign in
           </Button>
-          <Button variant="hero" size="sm" asChild>
-            <Link to="/kontakt">Gespräch buchen</Link>
+          <Button variant="hero" size="sm">
+            Book a call
           </Button>
         </div>
 
@@ -73,17 +72,17 @@ const Navbar = () => {
         <div className="md:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
-              <Link
+              <a
                 key={l.href}
-                to={l.href}
+                href={l.href}
                 onClick={() => setOpen(false)}
                 className="px-3 py-3 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary"
               >
                 {l.label}
-              </Link>
+              </a>
             ))}
-            <Button variant="hero" size="sm" className="mt-3" asChild>
-              <Link to="/kontakt" onClick={() => setOpen(false)}>Gespräch buchen</Link>
+            <Button variant="hero" size="sm" className="mt-3">
+              Book a call
             </Button>
           </nav>
         </div>

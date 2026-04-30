@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-ai-hr.jpg";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,37 +23,36 @@ const Hero = () => {
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-4 py-1.5 backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
               <span className="text-xs font-medium tracking-wide text-muted-foreground">
-                AI ENABLEMENT FÜR HR & PEOPLE OPERATIONS
+                AI-NATIVE PEOPLE STRATEGY · SINCE 2019
               </span>
             </div>
 
             <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight">
-              KI im HR ist{" "}
-              <span className="text-gradient">pragmatisch,</span>{" "}
-              <span className="italic font-light text-muted-foreground">sicher & befähigend.</span>
+              The future of HR is{" "}
+              <span className="text-gradient">intelligent,</span>{" "}
+              <span className="italic font-light text-muted-foreground">human-led.</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              People & Prompts GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI. Wir befähigen Ihre HR-Abteilungen, Prozesse zu automatisieren und sich wieder auf den Menschen zu fokussieren.
+              RAWR pairs senior HR consultants with proprietary AI to redesign
+              hiring, performance, and workforce planning for Fortune 500 enterprises.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/kontakt">
-                  Beratungsgespräch vereinbaren
-                  <ArrowRight />
-                </Link>
+              <Button variant="hero" size="lg">
+                Book a strategy call
+                <ArrowRight />
               </Button>
               <Button variant="glass" size="lg">
-                Mehr erfahren
+                See the platform
               </Button>
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
               {[
-                { k: "50%", v: "Zeitersparnis bei Admin" },
-                { k: "100%", v: "DSGVO-konform" },
-                { k: "KMU", v: "Fokus auf Mittelstand" },
+                { k: "240+", v: "Enterprise clients" },
+                { k: "38%", v: "Avg. time-to-hire cut" },
+                { k: "$2.1B", v: "Workforce optimized" },
               ].map((s) => (
                 <div key={s.v}>
                   <div className="font-display text-2xl md:text-3xl font-semibold text-gradient">

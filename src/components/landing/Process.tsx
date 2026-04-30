@@ -3,23 +3,23 @@ import { motion } from "framer-motion";
 const steps = [
   {
     n: "01",
-    t: "Audit",
-    d: "Wir führen ein 'HR AI Readiness Audit' durch, um Potenziale in Personalprozessen und Datenschutzrisiken zu bewerten.",
+    t: "Diagnose",
+    d: "We ingest your HRIS, ATS and engagement data. The RAWR model maps your workforce in 14 days.",
   },
   {
     n: "02",
-    t: "Strategie",
-    d: "Entwicklung maßgeschneiderter Konzepte für DSGVO-konforme LLM-Auswahl und sichere Enterprise-KI Schnittstellen.",
+    t: "Design",
+    d: "Senior consultants co-create a roadmap with your leadership — grounded in benchmarks from 240+ enterprises.",
   },
   {
     n: "03",
-    t: "Enablement",
-    d: "Wir schulen Ihre HR-Mitarbeiter direkt an der Tastatur in Best Practices für Prompt Engineering und Automatisierung.",
+    t: "Deploy",
+    d: "Embedded squads ship interventions, AI agents and dashboards. We measure outcomes weekly.",
   },
   {
     n: "04",
-    t: "Integration",
-    d: "Nahtlose Verbindung bestehender HR-Software (z.B. Personio, Workday) mit KI-Fähigkeiten für nachhaltige Effizienz.",
+    t: "Compound",
+    d: "Continuous learning loops keep your people strategy ahead of the market — quarter after quarter.",
   },
 ];
 
@@ -30,12 +30,13 @@ const Process = () => {
       <div className="container relative">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4 lg:sticky lg:top-28 self-start">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">Unser Prozess</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">The Method</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight">
-              Vom <span className="text-gradient">Konzept zur Befähigung</span> in vier Schritten.
+              From <span className="text-gradient">data to decisions</span> in four moves.
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Ein pragmatischer Ansatz speziell für mittelständische Fachabteilungen. Keine abstrakten PowerPoint-Schlachten – nur messbares Enablement.
+              A repeatable engagement model refined across 600+ projects. No
+              50-slide decks — just measurable change.
             </p>
           </div>
 

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import LogoCloud from "@/components/landing/LogoCloud";
 import Services from "@/components/landing/Services";
@@ -7,25 +7,11 @@ import Process from "@/components/landing/Process";
 import CaseStudies from "@/components/landing/CaseStudies";
 import Testimonial from "@/components/landing/Testimonial";
 import CTA from "@/components/landing/CTA";
+import Footer from "@/components/landing/Footer";
 
 const Index = () => {
-  const location = useLocation();
-
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
-  }, [location]);
-  useEffect(() => {
-    document.title = "People & Prompts — KI-Enablement für HR & People Operations";
+    document.title = "RAWR — AI-Native HR Consulting for Enterprise";
 
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
@@ -38,7 +24,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "People & Prompts begleitet den Mittelstand bei der DSGVO-konformen Integration von KI in HR-Prozesse."
+      "RAWR pairs senior HR consultants with proprietary AI to redesign hiring, performance and workforce planning for Fortune 500 enterprises."
     );
 
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -51,7 +37,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="w-full">
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
       <Hero />
       <LogoCloud />
       <Services />
@@ -59,7 +46,8 @@ const Index = () => {
       <CaseStudies />
       <Testimonial />
       <CTA />
-    </div>
+      <Footer />
+    </main>
   );
 };
 
