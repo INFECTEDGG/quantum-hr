@@ -21,7 +21,7 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Bitte gib deinen Namen ein (min. 2 Zeichen)." }),
   email: z.string().email({ message: "Bitte gib eine gültige E-Mail-Adresse ein." }),
   company: z.string().optional(),
-  message: z.string(),
+  message: z.string().min(1, { message: "Bitte gib eine Nachricht ein." }),
 });
 
 export default function Contact() {
