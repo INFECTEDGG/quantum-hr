@@ -45,10 +45,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Mock-Delay für UX (2 Sekunden)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // FaaS / Formspree Integration (Hier die echte URL eintragen) 
+      // FaaS / Formspree Integration
       const response = await fetch("https://formspree.io/f/mdabnjjg", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
