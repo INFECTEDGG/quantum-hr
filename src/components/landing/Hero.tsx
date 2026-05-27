@@ -35,7 +35,7 @@ const Hero = () => {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              People & Prompts GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI. Wir befähigen Ihre HR-Abteilungen, Prozesse zu automatisieren und sich wieder auf den Menschen zu fokussieren.
+              RAWR – Recruitment AI Workforce Revolution GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI. Wir befähigen Ihre HR-Abteilungen, Prozesse zu automatisieren und sich wieder auf den Menschen zu fokussieren.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">

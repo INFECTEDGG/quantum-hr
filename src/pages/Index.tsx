@@ -25,7 +25,7 @@ const Index = () => {
     }
   }, [location]);
   useEffect(() => {
-    document.title = "People & Prompts — KI-Enablement für HR & People Operations";
+    document.title = "RAWR – Recruitment AI Workforce Revolution GmbH — KI-Enablement für HR & People Operations";
 
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
@@ -38,7 +38,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "People & Prompts begleitet den Mittelstand bei der DSGVO-konformen Integration von KI in HR-Prozesse."
+      "RAWR – Recruitment AI Workforce Revolution GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI in HR-Prozesse."
     );
 
     let canonical = document.querySelector('link[rel="canonical"]');

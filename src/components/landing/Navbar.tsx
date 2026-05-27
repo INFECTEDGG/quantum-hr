@@ -30,16 +30,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5 group">
           <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow">
             <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
           </div>
-          <span className="font-display text-lg font-semibold tracking-tight">
-            People & Prompts<span className="text-primary-glow">.</span>
+          <span className="font-display text-sm sm:text-base xl:text-lg font-semibold tracking-tight leading-tight max-w-[calc(100vw-5.5rem)] xl:max-w-none">
+            RAWR – Recruitment AI Workforce Revolution GmbH
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -51,7 +51,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-2">
           <Button variant="ghost" size="sm">
             Login
           </Button>
@@ -61,7 +61,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full border border-border"
+          className="xl:hidden h-10 w-10 inline-flex items-center justify-center rounded-full border border-border"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
+        <div className="xl:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
               <Link

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const Datenschutz = () => {
   useEffect(() => {
-    document.title = "Datenschutz - RAWR";
+    document.title = "Datenschutz - RAWR – Recruitment AI Workforce Revolution GmbH";
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const Datenschutz = () => {
           <div>
             <h2 className="font-display text-2xl font-semibold">Verantwortlicher</h2>
             <div className="mt-4 space-y-1 text-muted-foreground">
-              <p>RAWR GmbH</p>
+              <p>RAWR – Recruitment AI Workforce Revolution GmbH</p>
               <p>Etzelstraße</p>
               <p>74076 Heilbronn</p>
               <p>E-Mail: [datenschutz@rawr.com]</p>

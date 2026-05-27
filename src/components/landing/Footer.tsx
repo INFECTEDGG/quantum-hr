@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="flex items-center gap-2.5">
               <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow" />
               <span className="font-display text-lg font-semibold tracking-tight">
-                People & Prompts<span className="text-primary-glow">.</span>
+                RAWR – Recruitment AI Workforce Revolution GmbH
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} People & Prompts GmbH. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} RAWR – Recruitment AI Workforce Revolution GmbH. All rights reserved.</p>
           <p>Sicherheit. Pragmatismus. Befähigung.</p>
         </div>
       </div>

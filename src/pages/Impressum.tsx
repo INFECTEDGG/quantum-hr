@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Impressum = () => {
   useEffect(() => {
-    document.title = "Impressum - RAWR";
+    document.title = "Impressum - RAWR – Recruitment AI Workforce Revolution GmbH";
   }, []);
 
   return (
@@ -17,7 +17,7 @@ const Impressum = () => {
               Impressum
             </h1>
             <p className="mt-5 text-muted-foreground text-lg">
-              Angaben gemäss § 5 DDG für das studentische Projekt RAWR.
+              Angaben gemäss § 5 DDG für das studentische Projekt RAWR – Recruitment AI Workforce Revolution GmbH.
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ const Impressum = () => {
           <div>
             <h2 className="font-display text-2xl font-semibold">Unternehmensangaben</h2>
             <div className="mt-4 rounded-2xl border border-border bg-surface-1/40 p-6 space-y-1 text-muted-foreground">
-              <p>RAWR GmbH</p>
+              <p>RAWR – Recruitment AI Workforce Revolution GmbH</p>
               <p>Etzelstrasse</p>
               <p>74076 Heilbronn</p>
               <p>Deutschland</p>

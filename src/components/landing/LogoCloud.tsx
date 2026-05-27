@@ -1,5 +1,5 @@
 const logos = [
-  "NORTHWIND", "ACME CORP", "VERTEX", "HELIOS", "QUANTA", "OBSIDIAN", "MERIDIAN", "ATLAS BANK",
+  "Adidas", "Aldi", "Allianz", "BASF", "Bayer", "BMW", "Bosch", "Commerzbank", "Continental", "DAIMLER", "DATEV", "Deutsche Bank", "Deutsche Telekom", "E.ON", "Fresenius", "Lidl", "Lufthansa", "Mercedes-Benz", "Porsche", "RWE", "SAP", "Siemens", "Thyssenkrupp", "Volkswagen", "Zalando"
 ];
 
 const LogoCloud = () => {

@@ -17,7 +17,7 @@ const Testimonial = () => {
         >
           <div className="font-display text-5xl text-primary-glow leading-none">“</div>
           <blockquote className="mt-4 font-display text-2xl md:text-4xl font-medium leading-[1.25] tracking-tight">
-            People & Prompts hat uns nicht nur beraten, sondern unser HR-Team direkt an der Tastatur befähigt. Die Automatisierung ist enorm. Der Fokus auf Datenschutz ist{" "}
+            RAWR – Recruitment AI Workforce Revolution GmbH hat uns nicht nur beraten, sondern unser HR-Team direkt an der Tastatur befähigt. Die Automatisierung ist enorm. Der Fokus auf Datenschutz ist{" "}
             <span className="text-gradient">beruhigend und sicher.</span>
           </blockquote>
           <figcaption className="mt-10 flex items-center justify-center gap-4">
