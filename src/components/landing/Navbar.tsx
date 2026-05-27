@@ -40,9 +40,11 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-2.5 group">
-          <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow">
-            <div className="absolute inset-1 rounded-lg bg-background/40 backdrop-blur-sm" />
-          </div>
+          <img
+            src="/rawr-logo.png"
+            alt="RAWR"
+            className="h-11 w-11 shrink-0 rounded-xl bg-white object-contain p-1.5 shadow-sm transition-transform duration-300 group-hover:scale-105"
+          />
           <span className="font-display text-sm sm:text-base xl:text-lg font-semibold tracking-tight leading-tight max-w-[calc(100vw-5.5rem)] xl:max-w-none">
             RAWR – Recruitment AI Workforce Revolution
           </span>

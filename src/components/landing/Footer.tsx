@@ -10,7 +10,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
-              <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-primary-glow shadow-glow" />
+              <img
+                src="/rawr-logo.png"
+                alt="RAWR"
+                className="h-12 w-12 shrink-0 rounded-xl bg-white object-contain p-1.5 shadow-sm"
+              />
               <span className="font-display text-lg font-semibold tracking-tight">
                 RAWR – Recruitment AI Workforce Revolution GmbH
               </span>
