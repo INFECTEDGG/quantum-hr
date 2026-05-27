@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -15,21 +15,91 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
-// 1. Zod Schema for validation
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Bitte gib deinen Namen ein (min. 2 Zeichen)." }),
-  email: z.string().email({ message: "Bitte gib eine gültige E-Mail-Adresse ein." }),
-  company: z.string().optional(),
-  message: z.string().min(1, { message: "Bitte gib eine Nachricht ein." }),
-});
+const content = {
+  de: {
+    title: "Kontaktieren Sie uns",
+    intro:
+      "Bereit für das nächste Level? Lassen Sie uns über Ihr Projekt sprechen. Füllen Sie das Formular aus und wir melden uns zeitnah.",
+    nameRequired: "Bitte gib deinen Namen ein (min. 2 Zeichen).",
+    emailInvalid: "Bitte gib eine gültige E-Mail-Adresse ein.",
+    messageRequired: "Bitte gib eine Nachricht ein.",
+    namePlaceholder: "Max Mustermann",
+    emailPlaceholder: "max@unternehmen.de",
+    companyPlaceholder: "GmbH & Co. KG",
+    messageLabel: "Deine Nachricht *",
+    messagePlaceholder: "Beschreibe kurz dein Projekt oder dein Anliegen...",
+    submit: "Anfrage absenden",
+    submitting: "Wird gesendet...",
+    success: "Anfrage erfolgreich versendet!",
+    successDescription: "Wir werden uns so schnell wie möglich bei dir melden.",
+    error: "Fehler beim Senden",
+    errorDescription: "Bitte versuche es später noch einmal.",
+    jsonDescription: "Ihre Experten für Online Marketing und Web Development.",
+  },
+  en: {
+    title: "Contact us",
+    intro:
+      "Ready for the next level? Let us talk about your project. Fill out the form and we will get back to you shortly.",
+    nameRequired: "Please enter your name (min. 2 characters).",
+    emailInvalid: "Please enter a valid email address.",
+    messageRequired: "Please enter a message.",
+    namePlaceholder: "Max Mustermann",
+    emailPlaceholder: "max@company.com",
+    companyPlaceholder: "Company Ltd.",
+    messageLabel: "Your message *",
+    messagePlaceholder: "Briefly describe your project or request...",
+    submit: "Send request",
+    submitting: "Sending...",
+    success: "Request sent successfully!",
+    successDescription: "We will get back to you as soon as possible.",
+    error: "Error while sending",
+    errorDescription: "Please try again later.",
+    jsonDescription: "Experts in AI enablement and HR transformation.",
+  },
+  fr: {
+    title: "Contactez-nous",
+    intro:
+      "Prêt pour la prochaine étape ? Parlons de votre projet. Remplissez le formulaire et nous vous répondrons rapidement.",
+    nameRequired: "Veuillez saisir votre nom (min. 2 caractères).",
+    emailInvalid: "Veuillez saisir une adresse e-mail valide.",
+    messageRequired: "Veuillez saisir un message.",
+    namePlaceholder: "Max Mustermann",
+    emailPlaceholder: "max@entreprise.fr",
+    companyPlaceholder: "Entreprise SARL",
+    messageLabel: "Votre message *",
+    messagePlaceholder: "Décrivez brièvement votre projet ou votre demande...",
+    submit: "Envoyer la demande",
+    submitting: "Envoi...",
+    success: "Demande envoyée avec succès !",
+    successDescription: "Nous vous répondrons dès que possible.",
+    error: "Erreur lors de l'envoi",
+    errorDescription: "Veuillez réessayer plus tard.",
+    jsonDescription: "Experts en enablement IA et transformation RH.",
+  },
+};
 
 export default function Contact() {
+  const { language, t } = useI18n();
+  const copy = content[language];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const formSchema = useMemo(
+    () =>
+      z.object({
+        name: z.string().min(2, { message: copy.nameRequired }),
+        email: z.string().email({ message: copy.emailInvalid }),
+        company: z.string().optional(),
+        message: z.string().min(1, { message: copy.messageRequired }),
+      }),
+    [copy.emailInvalid, copy.messageRequired, copy.nameRequired],
+  );
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,14 +126,14 @@ export default function Contact() {
       // Marketing / Tracking Simulation
       console.log("Analytics: Event 'generate_lead' gefeuert", values);
       
-      toast.success("Anfrage erfolgreich versendet!", {
-        description: "Wir werden uns so schnell wie möglich bei dir melden.",
+      toast.success(copy.success, {
+        description: copy.successDescription,
       });
       
       form.reset();
     } catch (error) {
-      toast.error("Fehler beim Senden", {
-        description: "Bitte versuche es später noch einmal.",
+      toast.error(copy.error, {
+        description: copy.errorDescription,
       });
     } finally {
       setIsSubmitting(false);
@@ -75,7 +145,7 @@ export default function Contact() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Rawr Consulting Agency",
-    "description": "Ihre Experten für Online Marketing und Web Development.",
+    "description": copy.jsonDescription,
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
@@ -88,10 +158,9 @@ export default function Contact() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Kontaktieren Sie uns</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">{copy.title}</h1>
         <p className="text-lg text-muted-foreground">
-          Bereit für das nächste Level? Lassen Sie uns über Ihr Projekt sprechen. 
-          Füllen Sie das Formular aus und wir melden uns zeitnah.
+          {copy.intro}
         </p>
       </div>
 
@@ -105,9 +174,9 @@ export default function Contact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name *</FormLabel>
+                    <FormLabel>{t("common.name")} *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Max Mustermann" {...field} />
+                      <Input placeholder={copy.namePlaceholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -120,9 +189,9 @@ export default function Contact() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>E-Mail *</FormLabel>
+                    <FormLabel>{t("common.email")} *</FormLabel>
                     <FormControl>
-                      <Input placeholder="max@unternehmen.de" type="email" {...field} />
+                      <Input placeholder={copy.emailPlaceholder} type="email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -136,9 +205,9 @@ export default function Contact() {
               name="company"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Firma <span className="text-muted-foreground font-normal">(Optional)</span></FormLabel>
+                  <FormLabel>{t("common.company")} <span className="text-muted-foreground font-normal">({t("common.optional")})</span></FormLabel>
                   <FormControl>
-                    <Input placeholder="GmbH & Co. KG" {...field} />
+                    <Input placeholder={copy.companyPlaceholder} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -151,10 +220,10 @@ export default function Contact() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Deine Nachricht *</FormLabel>
+                  <FormLabel>{copy.messageLabel}</FormLabel>
                   <FormControl>
                     <Textarea 
-                      placeholder="Beschreibe kurz dein Projekt oder dein Anliegen..." 
+                      placeholder={copy.messagePlaceholder}
                       className="min-h-[120px]"
                       {...field} 
                     />
@@ -167,7 +236,7 @@ export default function Contact() {
             {/* Submit */}
             <Button type="submit" className="w-full sm:w-auto" disabled={isSubmitting}>
               {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              {isSubmitting ? "Wird gesendet..." : "Anfrage absenden"}
+              {isSubmitting ? copy.submitting : copy.submit}
             </Button>
           </form>
         </Form>

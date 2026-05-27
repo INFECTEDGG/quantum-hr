@@ -1,13 +1,23 @@
+import { useI18n } from "@/lib/i18n";
+
 const logos = [
   "Adidas", "Aldi", "Allianz", "BASF", "Bayer", "BMW", "Bosch", "Commerzbank", "Continental", "DAIMLER", "DATEV", "Deutsche Bank", "Deutsche Telekom", "E.ON", "Fresenius", "Lidl", "Lufthansa", "Mercedes-Benz", "Porsche", "RWE", "SAP", "Siemens", "Thyssenkrupp", "Volkswagen", "Zalando"
 ];
 
+const tagline = {
+  de: "Vertraut von People Leaders bei",
+  en: "Trusted by people leaders at",
+  fr: "Approuvé par des responsables RH chez",
+};
+
 const LogoCloud = () => {
+  const { language } = useI18n();
+
   return (
     <section className="relative py-16 border-y border-border bg-surface-1/40">
       <div className="container">
         <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          Trusted by people leaders at
+          {tagline[language]}
         </p>
         <div className="mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
           <div className="flex gap-16 animate-ticker w-max">

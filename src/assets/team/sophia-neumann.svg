@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder for Sophia Neumann</title>
+  <desc id="desc">Abstract professional portrait placeholder with RAWR brand colors.</desc>
+  <defs>
+    <linearGradient id="bg" x1="125" y1="86" x2="838" y2="1114" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f97316"/>
+      <stop offset="0.46" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#050514"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(368 252) rotate(65) scale(564 451)">
+      <stop stop-color="#fdba74" stop-opacity="0.76"/>
+      <stop offset="1" stop-color="#fdba74" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip">
+      <rect width="960" height="1200" rx="64"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="960" height="1200" fill="url(#bg)"/>
+    <rect width="960" height="1200" fill="url(#glow)"/>
+    <path d="M0 768C100 700 214 681 341 709C491 742 592 840 719 803C812 776 893 711 960 642V1200H0V768Z" fill="#09091f" opacity="0.73"/>
+    <circle cx="481" cy="383" r="147" fill="#ffedd5"/>
+    <path d="M306 379C311 268 382 200 491 200C591 200 660 263 676 372C635 351 584 310 523 248C458 320 386 364 306 379Z" fill="#1f1627"/>
+    <path d="M247 1200L280 910C309 739 385 633 481 633C579 633 655 739 684 910L716 1200H247Z" fill="#15122e"/>
+    <path d="M370 614C397 647 434 664 481 664C529 664 567 647 594 614V715C559 747 522 764 482 764C440 764 403 747 370 715V614Z" fill="#fed7aa"/>
+    <path d="M321 842C369 799 422 778 481 778C542 778 597 801 646 846" fill="none" stroke="#fdba74" stroke-width="15" stroke-linecap="round" opacity="0.64"/>
+    <path d="M140 1033H822" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+    <circle cx="154" cy="177" r="5" fill="#ffedd5" opacity="0.68"/>
+    <circle cx="805" cy="208" r="6" fill="#ffedd5" opacity="0.58"/>
+    <circle cx="797" cy="1012" r="7" fill="#ffedd5" opacity="0.58"/>
+  </g>
+</svg>

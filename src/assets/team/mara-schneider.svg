@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder for Mara Schneider</title>
+  <desc id="desc">Abstract professional portrait placeholder with RAWR brand colors.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="86" x2="847" y2="1117" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/>
+      <stop offset="0.5" stop-color="#3730a3"/>
+      <stop offset="1" stop-color="#050514"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(334 231) rotate(67) scale(594 477)">
+      <stop stop-color="#67e8f9" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#67e8f9" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip">
+      <rect width="960" height="1200" rx="64"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="960" height="1200" fill="url(#bg)"/>
+    <rect width="960" height="1200" fill="url(#glow)"/>
+    <path d="M0 748C92 691 199 676 321 704C467 738 570 822 695 786C789 759 878 696 960 618V1200H0V748Z" fill="#09091f" opacity="0.74"/>
+    <circle cx="481" cy="378" r="148" fill="#bae6fd"/>
+    <path d="M311 371C314 261 383 198 490 198C592 198 661 264 675 375C631 344 583 302 531 248C456 324 384 365 311 371Z" fill="#111827"/>
+    <path d="M258 1200L291 909C319 737 392 635 481 635C572 635 645 737 674 909L706 1200H258Z" fill="#111827"/>
+    <path d="M370 619C398 652 434 668 481 668C530 668 568 652 594 619V718C559 751 522 768 482 768C440 768 403 751 370 718V619Z" fill="#7dd3fc"/>
+    <path d="M326 844C370 801 422 780 481 780C542 780 596 802 641 847" fill="none" stroke="#67e8f9" stroke-width="15" stroke-linecap="round" opacity="0.62"/>
+    <path d="M115 1056H847" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+    <circle cx="169" cy="158" r="6" fill="#cffafe" opacity="0.72"/>
+    <circle cx="777" cy="209" r="4" fill="#cffafe" opacity="0.5"/>
+    <circle cx="823" cy="994" r="7" fill="#cffafe" opacity="0.6"/>
+  </g>
+</svg>

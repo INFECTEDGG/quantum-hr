@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder for Maximilian Stephan</title>
+  <desc id="desc">Abstract professional portrait placeholder with RAWR brand colors.</desc>
+  <defs>
+    <linearGradient id="bg" x1="126" y1="75" x2="831" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4f46e5"/>
+      <stop offset="0.52" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#050514"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(651 251) rotate(125) scale(569 470)">
+      <stop stop-color="#a78bfa" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip">
+      <rect width="960" height="1200" rx="64"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="960" height="1200" fill="url(#bg)"/>
+    <rect width="960" height="1200" fill="url(#glow)"/>
+    <path d="M0 796C126 710 250 682 372 712C524 749 620 870 760 839C844 821 908 766 960 711V1200H0V796Z" fill="#09091f" opacity="0.7"/>
+    <circle cx="485" cy="358" r="154" fill="#ddd6fe"/>
+    <path d="M318 303C368 223 447 190 541 212C620 231 676 286 695 367C639 342 580 311 524 272C459 312 391 333 318 303Z" fill="#17142d"/>
+    <path d="M221 918C248 731 350 610 482 610C616 610 719 732 746 918L778 1200H189L221 918Z" fill="#151533"/>
+    <path d="M312 826C370 773 427 747 482 747C540 747 598 774 655 826" fill="none" stroke="#a78bfa" stroke-width="15" stroke-linecap="round" opacity="0.6"/>
+    <path d="M379 606C406 638 442 654 487 654C532 654 569 638 596 606V699C563 730 526 746 486 746C445 746 410 730 379 699V606Z" fill="#c4b5fd"/>
+    <path d="M196 1010H766" stroke="#ffffff" stroke-opacity="0.13" stroke-width="2"/>
+    <path d="M117 153H843" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
+    <circle cx="148" cy="188" r="5" fill="#c4b5fd" opacity="0.72"/>
+    <circle cx="810" cy="1043" r="7" fill="#c4b5fd" opacity="0.65"/>
+  </g>
+</svg>
