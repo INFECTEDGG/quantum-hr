@@ -17,7 +17,7 @@ Alle Inhalte, Kundennamen, Referenzen, Produkte, Leistungen und Unternehmensdate
 - Globale Navigation mit Hauptlinks und `Mehr`-Dropdown
 - Footer mit Unternehmens-, Ressourcen-, Datenschutz- und Cookie-Einstellungslinks
 - Cookie-Consent-Banner mit Auswahl fuer notwendige Technologien und optionale Analyse
-- Vercel Analytics wird erst nach Zustimmung zu Analyse geladen
+- Vercel Analytics und Speed Insights werden erst nach Zustimmung zu Analyse geladen
 - Separate Q&A-Seite mit Accordion fuer haeufige Fragen
 - Separate Marketingseiten fuer Referenzen, Lizenzen, Case Studies, Unternehmensvorstellung, Serviceleistungen, Blog und digitale Produkte/Shop
 - Datenschutz- und Impressumsseite
@@ -67,7 +67,7 @@ src/pages/MarketingPage.tsx
 
 Neue Marketingseiten koennen durch einen weiteren Eintrag in `marketing-pages.ts` und eine Route in `App.tsx` ergaenzt werden.
 
-## Cookie Consent und Analytics
+## Cookie Consent, Analytics und Speed Insights
 
 Der Cookie-Banner befindet sich in:
 
@@ -76,7 +76,7 @@ src/components/CookieConsentBanner.tsx
 src/lib/cookie-consent.ts
 ```
 
-Die Auswahl wird in `localStorage` unter `rawr.cookieConsent.v1` gespeichert. Notwendige Einstellungen bleiben aktiv. Vercel Analytics wird nur gerendert, wenn der Nutzer Analyse zugestimmt hat.
+Die Auswahl wird in `localStorage` unter `rawr.cookieConsent.v1` gespeichert. Notwendige Einstellungen bleiben aktiv. Vercel Analytics und Vercel Speed Insights werden nur gerendert, wenn der Nutzer Analyse zugestimmt hat.
 
 Die Cookie-Einstellungen koennen spaeter ueber den Footer erneut geoeffnet werden.
 
@@ -106,6 +106,7 @@ src/
 - Framer Motion
 - lucide-react
 - Vercel Analytics
+- Vercel Speed Insights
 - Vitest
 - Testing Library
 

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -41,7 +42,12 @@ export const CookieControlledAnalytics = () => {
     };
   }, []);
 
-  return analyticsEnabled ? <Analytics /> : null;
+  return analyticsEnabled ? (
+    <>
+      <Analytics />
+      <SpeedInsights />
+    </>
+  ) : null;
 };
 
 const CookieConsentBanner = () => {
