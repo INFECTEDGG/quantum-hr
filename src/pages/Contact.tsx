@@ -116,9 +116,12 @@ export default function Contact() {
     
     try {
       // FaaS / Formspree Integration
-      const response = await fetch("https://formspree.io/f/mdabnjjg", {
+      const response = await fetch("https://formspree.io/f/mzdwozkq", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(values),
       });
       if (!response.ok) throw new Error("Netzwerk Fehler");
