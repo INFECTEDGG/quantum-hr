@@ -1,7 +1,7 @@
 import { useI18n } from "@/lib/i18n";
 
 const logos = [
-  "Adidas", "Aldi", "Allianz", "BASF", "Bayer", "BMW", "Bosch", "Commerzbank", "Continental", "DAIMLER", "DATEV", "Deutsche Bank", "Deutsche Telekom", "E.ON", "Fresenius", "Lidl", "Lufthansa", "Mercedes-Benz", "Porsche", "RWE", "SAP", "Siemens", "Thyssenkrupp", "Volkswagen", "Zalando"
+  "Adidas", "Aldi", "Allianz", "Apple", "BASF", "Bayer", "BlackRock", "BMW", "Bosch", "BYD", "Coca-Cola", "Commerzbank", "Continental", "DAIMLER", "DATEV", "Deutsche Bank", "Deutsche Telekom", "E.ON", "Fresenius", "Hummel", "IBM", "Lidl", "Lufthansa", "Microsoft", "Mercedes-Benz", "NVIDIA", "Phillips", "Porsche", "RWE", "SAP", "Siemens", "Trumph", "Thyssenkrupp", "Vector Informatik", "Volkswagen", "Zalando"
 ];
 
 const tagline = {

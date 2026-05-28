@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useI18n } from "@/lib/i18n";
+import { COOKIE_SETTINGS_OPEN_EVENT } from "@/lib/cookie-consent";
 
 export const Footer = () => {
   const { t } = useI18n();
@@ -21,6 +22,13 @@ export const Footer = () => {
             <Link to="/datenschutz" className="hover:text-foreground transition-colors">
               {t("footer.privacy")}
             </Link>
+            <button
+              type="button"
+              className="hover:text-foreground transition-colors"
+              onClick={() => window.dispatchEvent(new Event(COOKIE_SETTINGS_OPEN_EVENT))}
+            >
+              {t("footer.cookieSettings")}
+            </button>
           </div>
           <div className="flex items-center gap-4 text-muted-foreground">
             <a href="https://www.linkedin.com/company/rawr-recruitment-ai-workforce-revolution" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">

@@ -1,18 +1,33 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "@/hooks/use-auth-state";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const links = [
-  { href: "/#services", labelKey: "nav.services" },
-  { href: "/#process", labelKey: "nav.process" },
-  { href: "/#impact", labelKey: "nav.impact" },
-  { href: "/ueber-uns", labelKey: "nav.about" },
+const primaryLinks = [
+  { href: "/leistungen", labelKey: "nav.services" },
+  { href: "/case-studies", labelKey: "nav.caseStudies" },
+  { href: "/blog", labelKey: "nav.blog" },
+  { href: "/shop", labelKey: "nav.shop" },
+  { href: "/unternehmen", labelKey: "nav.companyProfile" },
+];
+
+const moreLinks = [
+  { href: "/referenzen", labelKey: "nav.references" },
+  { href: "/lizenzen", labelKey: "nav.licenses" },
+  { href: "/fragen", labelKey: "nav.faq" },
   { href: "/kontakt", labelKey: "nav.contact" },
 ];
+
+const mobileLinks = [...primaryLinks, ...moreLinks];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +66,7 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden xl:flex items-center gap-1">
-          {links.map((l) => (
+          {primaryLinks.map((l) => (
             <Link
               key={l.href}
               to={l.href}
@@ -60,6 +75,19 @@ const Navbar = () => {
               {t(l.labelKey)}
             </Link>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground outline-none transition-colors hover:text-foreground focus:text-foreground">
+              {t("nav.more")}
+              <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-48 border-border bg-popover/95 backdrop-blur-xl">
+              {moreLinks.map((l) => (
+                <DropdownMenuItem key={l.href} asChild>
+                  <Link to={l.href}>{t(l.labelKey)}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         <div className="hidden xl:flex items-center gap-2">
@@ -102,7 +130,7 @@ const Navbar = () => {
       {open && (
         <div className="xl:hidden mt-3 mx-4 rounded-2xl border border-border bg-card-gradient backdrop-blur-xl p-5">
           <nav className="flex flex-col gap-1">
-            {links.map((l) => (
+            {mobileLinks.map((l) => (
               <Link
                 key={l.href}
                 to={l.href}

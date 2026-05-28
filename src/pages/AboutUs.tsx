@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { ArrowRight, BrainCircuit, Handshake, ShieldCheck, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import maximilianImage from "@/assets/team/maximilian-stephan.svg";
-import maraImage from "@/assets/team/mara-schneider.svg";
-import jonasImage from "@/assets/team/jonas-richter.svg";
-import sophiaImage from "@/assets/team/sophia-neumann.svg";
+import maximilianImage from "@/assets/team/maximilian-stephan.png";
+import dafneImage from "@/assets/team/dafne-ummak.png";
+import soerenImage from "@/assets/team/soeren-geiger.png";
+import niklasImage from "@/assets/team/niklas-burchhardt.png";
 import { useI18n } from "@/lib/i18n";
 
-const leaderImages = [maximilianImage, maraImage, jonasImage, sophiaImage];
+const leaderImages = [maximilianImage, dafneImage, soerenImage, niklasImage];
 
 const content = {
   de: {

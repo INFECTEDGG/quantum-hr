@@ -27,7 +27,10 @@ const Footer = () => {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-foreground">{t("footer.company")}</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <li><Link className="hover:text-foreground transition-colors" to="/unternehmen">{t("nav.companyProfile")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/ueber-uns">{t("nav.about")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/referenzen">{t("nav.references")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/lizenzen">{t("nav.licenses")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/kontakt">{t("nav.contact")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/impressum">{t("footer.imprint")}</Link></li>
             </ul>
@@ -36,8 +39,11 @@ const Footer = () => {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-foreground">{t("footer.resources")}</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li><Link className="hover:text-foreground transition-colors" to="/#services">{t("nav.services")}</Link></li>
-              <li><Link className="hover:text-foreground transition-colors" to="/#process">{t("nav.process")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/leistungen">{t("nav.services")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/case-studies">{t("nav.caseStudies")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/blog">{t("nav.blog")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/shop">{t("nav.shop")}</Link></li>
+              <li><Link className="hover:text-foreground transition-colors" to="/fragen">{t("nav.faq")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/datenschutz">{t("footer.privacy")}</Link></li>
             </ul>
           </div>
