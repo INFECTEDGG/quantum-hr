@@ -10,8 +10,8 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <Link to="/ueber-uns" className="hover:text-foreground transition-colors">
-              {t("nav.about")}
+            <Link to="/unternehmen" className="hover:text-foreground transition-colors">
+              {t("nav.companyProfile")}
             </Link>
             <Link to="/kontakt" className="hover:text-foreground transition-colors">
               {t("nav.contact")}

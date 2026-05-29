@@ -28,7 +28,6 @@ const Footer = () => {
             <p className="text-xs uppercase tracking-[0.2em] text-foreground">{t("footer.company")}</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li><Link className="hover:text-foreground transition-colors" to="/unternehmen">{t("nav.companyProfile")}</Link></li>
-              <li><Link className="hover:text-foreground transition-colors" to="/ueber-uns">{t("nav.about")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/referenzen">{t("nav.references")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/lizenzen">{t("nav.licenses")}</Link></li>
               <li><Link className="hover:text-foreground transition-colors" to="/kontakt">{t("nav.contact")}</Link></li>

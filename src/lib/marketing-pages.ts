@@ -4,7 +4,6 @@ export type MarketingPageKey =
   | "references"
   | "licenses"
   | "caseStudies"
-  | "company"
   | "services"
   | "blog"
   | "shop";
@@ -172,48 +171,6 @@ export const marketingPages: Record<Language, Record<MarketingPageKey, Marketing
                 "Guidelines, Prompt-Bibliothek und Trainings sichern einheitliche Qualität bei Stellenanzeigen, Bewerberkommunikation und Screening-Vorbereitung.",
               badge: "Handel",
               meta: "Mehr Standortkonsistenz",
-            },
-          ],
-        },
-      ],
-    },
-    company: {
-      path: "/unternehmen",
-      badge: "Unternehmensvorstellung",
-      title: "RAWR verbindet",
-      accent: "HR, KI und Verantwortung.",
-      intro:
-        "Wir begleiten Unternehmen vom ersten Audit bis zur produktiven Nutzung verantwortungsvoller KI-Workflows in HR und People Operations.",
-      primaryCta: "Team kennenlernen",
-      primaryHref: "/ueber-uns",
-      secondaryCta: "Kontakt aufnehmen",
-      secondaryHref: "/kontakt",
-      stats: [
-        ["4", "Führungsbereiche"],
-        ["1", "gemeinsamer Standard"],
-        ["DSGVO", "als Grundlage"],
-      ],
-      sections: [
-        {
-          title: "Wofür RAWR steht",
-          items: [
-            {
-              title: "Pragmatische Transformation",
-              description:
-                "Wir starten bei echten HR-Reibungen und bauen daraus konkrete Prozesse, Trainings und Automatisierungen.",
-              badge: "Praxis",
-            },
-            {
-              title: "Responsible AI by design",
-              description:
-                "Datenschutz, Fairness, Nachvollziehbarkeit und menschliche Kontrolle werden von Beginn an mitgedacht.",
-              badge: "Governance",
-            },
-            {
-              title: "Enablement statt Abhängigkeit",
-              description:
-                "Teams sollen KI nicht nur nutzen, sondern verstehen, bewerten und eigenständig weiterentwickeln können.",
-              badge: "Befähigung",
             },
           ],
         },
@@ -512,43 +469,6 @@ export const marketingPages: Record<Language, Record<MarketingPageKey, Marketing
         },
       ],
     },
-    company: {
-      path: "/unternehmen",
-      badge: "Company",
-      title: "RAWR connects",
-      accent: "HR, AI and responsibility.",
-      intro:
-        "We support companies from the first audit to productive use of responsible AI workflows in HR and People Operations.",
-      primaryCta: "Meet the team",
-      primaryHref: "/ueber-uns",
-      secondaryCta: "Contact us",
-      secondaryHref: "/kontakt",
-      stats: [["4", "leadership areas"], ["1", "shared standard"], ["GDPR", "as foundation"]],
-      sections: [
-        {
-          title: "What RAWR stands for",
-          items: [
-            {
-              title: "Pragmatic transformation",
-              description: "We start with real HR friction and turn it into concrete processes, training and automation.",
-              badge: "Practice",
-            },
-            {
-              title: "Responsible AI by design",
-              description:
-                "Privacy, fairness, explainability and human control are considered from the start.",
-              badge: "Governance",
-            },
-            {
-              title: "Enablement over dependency",
-              description:
-                "Teams should not only use AI, but understand, assess and evolve it confidently.",
-              badge: "Enablement",
-            },
-          ],
-        },
-      ],
-    },
     services: {
       path: "/leistungen",
       badge: "Services",
@@ -812,41 +732,6 @@ export const marketingPages: Record<Language, Record<MarketingPageKey, Marketing
                 "Guidelines, bibliothèque de prompts et formation assurent une qualité homogène des pratiques.",
               badge: "Retail",
               meta: "Plus de cohérence",
-            },
-          ],
-        },
-      ],
-    },
-    company: {
-      path: "/unternehmen",
-      badge: "Présentation",
-      title: "RAWR relie",
-      accent: "RH, IA et responsabilité.",
-      intro:
-        "Nous accompagnons les entreprises du premier audit à l'usage productif de workflows IA responsables en RH.",
-      primaryCta: "Rencontrer l'équipe",
-      primaryHref: "/ueber-uns",
-      secondaryCta: "Nous contacter",
-      secondaryHref: "/kontakt",
-      stats: [["4", "domaines"], ["1", "standard commun"], ["RGPD", "comme base"]],
-      sections: [
-        {
-          title: "Ce que représente RAWR",
-          items: [
-            {
-              title: "Transformation pragmatique",
-              description: "Nous partons des frictions RH réelles pour créer processus, formations et automatisations.",
-              badge: "Pratique",
-            },
-            {
-              title: "Responsible AI by design",
-              description: "Confidentialité, équité, explicabilité et contrôle humain sont intégrés dès le départ.",
-              badge: "Gouvernance",
-            },
-            {
-              title: "Autonomie plutôt que dépendance",
-              description: "Les équipes doivent utiliser, comprendre, évaluer et faire évoluer l'IA avec confiance.",
-              badge: "Enablement",
             },
           ],
         },

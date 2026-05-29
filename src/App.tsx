@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,13 +37,14 @@ const App = () => (
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/ueber-uns" element={<AboutUs />} />
+                <Route path="/ueber-uns" element={<Navigate to="/unternehmen" replace />} />
+                <Route path="/ueberuns" element={<Navigate to="/unternehmen" replace />} />
                 <Route path="/fragen" element={<FAQPage />} />
                 <Route path="/referenzen" element={<MarketingPage pageKey="references" />} />
                 <Route path="/lizenzen" element={<MarketingPage pageKey="licenses" />} />
                 <Route path="/licences" element={<MarketingPage pageKey="licenses" />} />
                 <Route path="/case-studies" element={<MarketingPage pageKey="caseStudies" />} />
-                <Route path="/unternehmen" element={<MarketingPage pageKey="company" />} />
+                <Route path="/unternehmen" element={<AboutUs />} />
                 <Route path="/leistungen" element={<MarketingPage pageKey="services" />} />
                 <Route path="/serviceleistungen" element={<MarketingPage pageKey="services" />} />
                 <Route path="/blog" element={<MarketingPage pageKey="blog" />} />

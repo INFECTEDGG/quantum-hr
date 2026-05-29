@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BrainCircuit, Handshake, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, BrainCircuit, Building2, Handshake, ShieldCheck, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import maximilianImage from "@/assets/team/maximilian-stephan.png";
@@ -13,16 +13,25 @@ const leaderImages = [maximilianImage, dafneImage, soerenImage, niklasImage];
 
 const content = {
   de: {
-    title: "Über uns - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Unternehmen - RAWR – Recruitment AI Workforce Revolution GmbH",
     description:
-      "Lernen Sie das Führungsteam von RAWR kennen: KI-Strategie, People Enablement, Automatisierung und Responsible AI für moderne HR-Abteilungen.",
-    heroBadge: "DAS TEAM HINTER RAWR",
-    heroTitle: "Wir machen KI im HR",
-    heroAccent: "verständlich, sicher und wirksam.",
+      "RAWR verbindet HR, KI und Verantwortung: Unternehmensprofil, Arbeitsweise und Führungsteam für moderne HR-Abteilungen.",
+    heroBadge: "UNTERNEHMEN",
+    heroTitle: "RAWR verbindet HR, KI",
+    heroAccent: "und Verantwortung.",
     heroText:
       "RAWR bringt Strategie, HR-Praxis, Automatisierung und Compliance zusammen. Unser Führungsteam begleitet Unternehmen vom ersten Audit bis zur produktiven Nutzung verantwortungsvoller KI-Workflows.",
     primary: "Team kennenlernen",
     secondary: "Leistungen ansehen",
+    companyBadge: "Unternehmensvorstellung",
+    companyHeading: "Wofür RAWR steht",
+    companyText:
+      "Wir entwickeln KI-Workflows für HR und People Operations, die im Arbeitsalltag wirklich tragfähig sind: klar priorisiert, datenschutzbewusst, nachvollziehbar und so aufgebaut, dass Teams sie selbstbewusst nutzen können.",
+    companyItems: [
+      ["Positionierung", "RAWR ist Partner für mittelständische Unternehmen, die KI im HR-Bereich strukturiert und verantwortungsvoll einführen möchten."],
+      ["Arbeitsmodell", "Wir verbinden Audit, Strategie, Workshops, Prototyping und produktive Umsetzung zu einem nachvollziehbaren Fahrplan."],
+      ["Verantwortung", "DSGVO, Fairness, Governance und Human-in-the-Loop-Prinzipien sind keine Extras, sondern Grundlage jeder Lösung."],
+    ],
     principles: [
       ["Pragmatische KI", "Wir starten dort, wo HR-Teams heute Reibung spüren, und bauen von dort aus belastbare Lösungen."],
       ["Verantwortung zuerst", "Datenschutz, Fairness und Nachvollziehbarkeit sind feste Bestandteile jedes Projekts."],
@@ -76,16 +85,25 @@ const content = {
     imageAlt: "Portraitplatzhalter von",
   },
   en: {
-    title: "About us - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Company - RAWR – Recruitment AI Workforce Revolution GmbH",
     description:
-      "Meet the RAWR leadership team: AI strategy, people enablement, automation and responsible AI for modern HR departments.",
-    heroBadge: "THE TEAM BEHIND RAWR",
-    heroTitle: "We make AI in HR",
-    heroAccent: "clear, secure and effective.",
+      "RAWR connects HR, AI and responsibility: company profile, way of working and leadership team for modern HR departments.",
+    heroBadge: "COMPANY",
+    heroTitle: "RAWR connects HR, AI",
+    heroAccent: "and responsibility.",
     heroText:
       "RAWR brings strategy, HR practice, automation and compliance together. Our leadership team supports companies from the first audit to productive use of responsible AI workflows.",
     primary: "Meet the team",
     secondary: "View services",
+    companyBadge: "Company profile",
+    companyHeading: "What RAWR stands for",
+    companyText:
+      "We develop AI workflows for HR and People Operations that hold up in daily work: clearly prioritized, privacy-conscious, explainable and built so teams can use them with confidence.",
+    companyItems: [
+      ["Positioning", "RAWR is a partner for mid-market companies that want to introduce AI in HR in a structured and responsible way."],
+      ["Way of working", "We connect audit, strategy, workshops, prototyping and productive implementation into a clear roadmap."],
+      ["Responsibility", "GDPR, fairness, governance and human-in-the-loop principles are not extras, but the foundation of every solution."],
+    ],
     principles: [
       ["Pragmatic AI", "We start where HR teams feel friction today and build reliable solutions from there."],
       ["Responsibility first", "Privacy, fairness and traceability are fixed parts of every project."],
@@ -139,16 +157,25 @@ const content = {
     imageAlt: "Portrait placeholder for",
   },
   fr: {
-    title: "À propos - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Entreprise - RAWR – Recruitment AI Workforce Revolution GmbH",
     description:
-      "Découvrez l'équipe dirigeante de RAWR : stratégie IA, enablement RH, automatisation et IA responsable pour les départements RH modernes.",
-    heroBadge: "L'ÉQUIPE DERRIÈRE RAWR",
-    heroTitle: "Nous rendons l'IA RH",
-    heroAccent: "compréhensible, sûre et utile.",
+      "RAWR relie RH, IA et responsabilité : profil d'entreprise, méthode de travail et équipe dirigeante pour départements RH modernes.",
+    heroBadge: "ENTREPRISE",
+    heroTitle: "RAWR relie RH, IA",
+    heroAccent: "et responsabilité.",
     heroText:
       "RAWR réunit stratégie, pratique RH, automatisation et conformité. Notre équipe dirigeante accompagne les entreprises du premier audit jusqu'à l'utilisation productive de workflows IA responsables.",
     primary: "Rencontrer l'équipe",
     secondary: "Voir les services",
+    companyBadge: "Présentation",
+    companyHeading: "Ce que représente RAWR",
+    companyText:
+      "Nous développons des workflows IA pour les RH et People Operations qui fonctionnent au quotidien : priorisés clairement, respectueux de la confidentialité, explicables et conçus pour que les équipes les utilisent avec confiance.",
+    companyItems: [
+      ["Positionnement", "RAWR accompagne les PME et ETI qui veulent introduire l'IA dans les RH de façon structurée et responsable."],
+      ["Méthode", "Nous relions audit, stratégie, workshops, prototypage et mise en production dans une feuille de route lisible."],
+      ["Responsabilité", "RGPD, équité, gouvernance et principes human-in-the-loop sont la base de chaque solution."],
+    ],
     principles: [
       ["IA pragmatique", "Nous partons des frictions vécues aujourd'hui par les équipes RH pour construire des solutions fiables."],
       ["Responsabilité d'abord", "Confidentialité, équité et traçabilité font partie intégrante de chaque projet."],
@@ -204,6 +231,7 @@ const content = {
 };
 
 const principleIcons = [BrainCircuit, ShieldCheck, Handshake];
+const companyIcons = [Building2, BrainCircuit, ShieldCheck];
 
 const AboutUs = () => {
   const { language } = useI18n();
@@ -237,7 +265,7 @@ const AboutUs = () => {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", window.location.origin + "/ueber-uns");
+    canonical.setAttribute("href", window.location.origin + "/unternehmen");
   }, [copy.description, copy.title]);
 
   return (
@@ -267,10 +295,10 @@ const AboutUs = () => {
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/kontakt">
+                  <a href="#team">
                     {copy.primary}
                     <ArrowRight />
-                  </Link>
+                  </a>
                 </Button>
                 <Button variant="glass" size="lg" asChild>
                   <Link to="/#services">{copy.secondary}</Link>
@@ -303,6 +331,46 @@ const AboutUs = () => {
                 ))}
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-20 md:py-28">
+        <div className="container">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <p className="text-xs uppercase tracking-[0.2em] text-primary-glow">
+                {copy.companyBadge}
+              </p>
+              <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
+                {copy.companyHeading}
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                {copy.companyText}
+              </p>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3 lg:col-span-7">
+              {copy.companyItems.map(([title, text], index) => {
+                const Icon = companyIcons[index];
+                return (
+                  <motion.article
+                    key={title}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.55, delay: index * 0.08 }}
+                    className="rounded-3xl border border-border bg-card-gradient p-6"
+                  >
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-primary/30 to-primary-glow/20">
+                      <Icon className="h-5 w-5 text-primary-glow" />
+                    </div>
+                    <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                  </motion.article>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
