@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -19,6 +18,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { marketingPages, type MarketingPageKey } from "@/lib/marketing-pages";
 import { useI18n } from "@/lib/i18n";
+import { createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
 
 const pageIcons: Record<MarketingPageKey, LucideIcon> = {
   references: UsersRound,
@@ -46,30 +46,20 @@ const MarketingPage = ({ pageKey }: MarketingPageProps) => {
   const { language } = useI18n();
   const page = marketingPages[language][pageKey];
   const PageIcon = pageIcons[pageKey];
+  const title = `${page.badge} - ${SITE_NAME}`;
 
-  useEffect(() => {
-    document.title = `${page.badge} - RAWR – Recruitment AI Workforce Revolution GmbH`;
-
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-
-    setMeta("description", page.intro);
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", window.location.origin + page.path);
-  }, [page.badge, page.intro, page.path]);
+  usePageSeo({
+    title,
+    description: page.intro,
+    path: page.path,
+    language,
+    jsonLd: createWebPageJsonLd({
+      title,
+      description: page.intro,
+      path: page.path,
+      language,
+    }),
+  });
 
   return (
     <div className="w-full bg-background text-foreground">

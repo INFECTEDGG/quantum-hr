@@ -23,6 +23,7 @@ import {
 import { createAccount, updateAccountPassword, type AuthRole, type PublicAccount } from "@/lib/auth";
 import { useAuthState } from "@/hooks/use-auth-state";
 import { useI18n } from "@/lib/i18n";
+import { usePageSeo } from "@/lib/seo";
 
 type AccountForm = {
   name: string;
@@ -218,9 +219,13 @@ const AdminDashboard = () => {
     customer: t("common.customer"),
   };
 
-  useEffect(() => {
-    document.title = copy.title;
-  }, [copy.title]);
+  usePageSeo({
+    title: copy.title,
+    description: copy.heading,
+    path: "/admin",
+    language,
+    noIndex: true,
+  });
 
   useEffect(() => {
     if (!accounts.length) {

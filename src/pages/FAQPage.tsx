@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircleQuestion } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -11,34 +10,29 @@ import {
 import { Button } from "@/components/ui/button";
 import { faqContent } from "@/lib/faq-content";
 import { useI18n } from "@/lib/i18n";
+import { createFaqJsonLd, createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
 
 const FAQPage = () => {
   const { language } = useI18n();
   const copy = faqContent[language];
+  const title = `${copy.badge} - ${SITE_NAME}`;
 
-  useEffect(() => {
-    document.title = `${copy.badge} - RAWR – Recruitment AI Workforce Revolution GmbH`;
-
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-
-    setMeta("description", copy.intro);
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", window.location.origin + "/fragen");
-  }, [copy.badge, copy.intro]);
+  usePageSeo({
+    title,
+    description: copy.intro,
+    path: "/fragen",
+    language,
+    jsonLd: [
+      createWebPageJsonLd({
+        title,
+        description: copy.intro,
+        path: "/fragen",
+        language,
+        pageType: "FAQPage",
+      }),
+      createFaqJsonLd(copy.questions),
+    ],
+  });
 
   return (
     <div className="w-full bg-background text-foreground">

@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, FolderKanban, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuthState } from "@/hooks/use-auth-state";
 import { useI18n } from "@/lib/i18n";
+import { usePageSeo } from "@/lib/seo";
 
 const content = {
   de: {
@@ -40,9 +40,13 @@ const CustomerPortal = () => {
   const { language } = useI18n();
   const copy = content[language];
 
-  useEffect(() => {
-    document.title = copy.title;
-  }, [copy.title]);
+  usePageSeo({
+    title: copy.title,
+    description: copy.text,
+    path: "/portal",
+    language,
+    noIndex: true,
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">

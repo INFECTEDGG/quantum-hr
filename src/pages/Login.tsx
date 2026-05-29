@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getCurrentUser, login } from "@/lib/auth";
 import { useI18n } from "@/lib/i18n";
+import { usePageSeo } from "@/lib/seo";
 
 const getAccountTarget = (role: "admin" | "customer") => (role === "admin" ? "/admin" : "/portal");
 
@@ -73,14 +74,20 @@ const Login = () => {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    document.title = copy.title;
+  usePageSeo({
+    title: copy.title,
+    description: copy.intro,
+    path: "/login",
+    language,
+    noIndex: true,
+  });
 
+  useEffect(() => {
     const user = getCurrentUser();
     if (user) {
       navigate(getAccountTarget(user.role), { replace: true });
     }
-  }, [copy.title, navigate]);
+  }, [navigate]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

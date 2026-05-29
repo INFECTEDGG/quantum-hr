@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
+import { SITE_NAME, usePageSeo } from "@/lib/seo";
 
 const content = {
   de: { message: "Diese Seite wurde nicht gefunden", home: "Zurück zur Startseite" },
@@ -12,6 +13,14 @@ const NotFound = () => {
   const location = useLocation();
   const { language } = useI18n();
   const copy = content[language];
+
+  usePageSeo({
+    title: `404 - ${SITE_NAME}`,
+    description: copy.message,
+    path: location.pathname,
+    language,
+    noIndex: true,
+  });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

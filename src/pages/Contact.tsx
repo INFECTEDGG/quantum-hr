@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { createWebPageJsonLd, organizationJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
 
 const content = {
   de: {
@@ -36,7 +37,7 @@ const content = {
     successDescription: "Wir werden uns so schnell wie möglich bei dir melden.",
     error: "Fehler beim Senden",
     errorDescription: "Bitte versuche es später noch einmal.",
-    jsonDescription: "Ihre Experten für Online Marketing und Web Development.",
+    jsonDescription: "KI-Enablement, HR-Automatisierung und verantwortungsvolle AI-Governance für moderne People Teams.",
   },
   en: {
     title: "Contact us",
@@ -83,6 +84,24 @@ const content = {
 export default function Contact() {
   const { language, t } = useI18n();
   const copy = content[language];
+  const pageTitle = `${copy.title} - ${SITE_NAME}`;
+
+  usePageSeo({
+    title: pageTitle,
+    description: copy.jsonDescription,
+    path: "/kontakt",
+    language,
+    jsonLd: [
+      organizationJsonLd,
+      createWebPageJsonLd({
+        title: pageTitle,
+        description: copy.jsonDescription,
+        path: "/kontakt",
+        language,
+        pageType: "ContactPage",
+      }),
+    ],
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -143,23 +162,8 @@ export default function Contact() {
     }
   }
 
-  // SEO & GEO: Structured Data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Rawr Consulting Agency",
-    "description": copy.jsonDescription,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "hello@rawr-consulting.com"
-    }
-  };
-
   return (
     <div className="container mx-auto pt-32 pb-16 px-4 max-w-2xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold tracking-tight mb-4">{copy.title}</h1>
         <p className="text-lg text-muted-foreground">

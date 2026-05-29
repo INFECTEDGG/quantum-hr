@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BrainCircuit, Building2, Handshake, ShieldCheck, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,6 +7,7 @@ import dafneImage from "@/assets/team/dafne-ummak.png";
 import soerenImage from "@/assets/team/soeren-geiger.png";
 import niklasImage from "@/assets/team/niklas-burchhardt.png";
 import { useI18n } from "@/lib/i18n";
+import { createWebPageJsonLd, organizationJsonLd, usePageSeo } from "@/lib/seo";
 
 const leaderImages = [maximilianImage, dafneImage, soerenImage, niklasImage];
 
@@ -241,32 +241,22 @@ const AboutUs = () => {
     image: leaderImages[index],
   }));
 
-  useEffect(() => {
-    document.title = copy.title;
-
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-
-    setMeta(
-      "description",
-      copy.description,
-    );
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", window.location.origin + "/unternehmen");
-  }, [copy.description, copy.title]);
+  usePageSeo({
+    title: copy.title,
+    description: copy.description,
+    path: "/unternehmen",
+    language,
+    jsonLd: [
+      organizationJsonLd,
+      createWebPageJsonLd({
+        title: copy.title,
+        description: copy.description,
+        path: "/unternehmen",
+        language,
+        pageType: "AboutPage",
+      }),
+    ],
+  });
 
   return (
     <div className="w-full bg-background text-foreground">

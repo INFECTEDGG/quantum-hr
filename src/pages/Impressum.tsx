@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "@/lib/i18n";
+import { createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
 
 const content = {
   de: {
@@ -122,10 +122,20 @@ const renderLine = (line: string) => {
 const Impressum = () => {
   const { language } = useI18n();
   const copy = content[language];
+  const title = `${copy.title} - ${SITE_NAME}`;
 
-  useEffect(() => {
-    document.title = `${copy.title} - RAWR – Recruitment AI Workforce Revolution GmbH`;
-  }, [copy.title]);
+  usePageSeo({
+    title,
+    description: copy.intro,
+    path: "/impressum",
+    language,
+    jsonLd: createWebPageJsonLd({
+      title,
+      description: copy.intro,
+      path: "/impressum",
+      language,
+    }),
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">

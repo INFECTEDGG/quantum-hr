@@ -9,6 +9,7 @@ import Testimonial from "@/components/landing/Testimonial";
 import FAQ from "@/components/landing/FAQ";
 import CTA from "@/components/landing/CTA";
 import { useI18n } from "@/lib/i18n";
+import { createWebPageJsonLd, usePageSeo, websiteJsonLd } from "@/lib/seo";
 
 const seo = {
   de: {
@@ -31,6 +32,23 @@ const seo = {
 const Index = () => {
   const location = useLocation();
   const { language } = useI18n();
+  const pageSeo = seo[language];
+
+  usePageSeo({
+    title: pageSeo.title,
+    description: pageSeo.description,
+    path: "/",
+    language,
+    jsonLd: [
+      websiteJsonLd,
+      createWebPageJsonLd({
+        title: pageSeo.title,
+        description: pageSeo.description,
+        path: "/",
+        language,
+      }),
+    ],
+  });
 
   useEffect(() => {
     if (location.hash) {
@@ -45,32 +63,6 @@ const Index = () => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   }, [location]);
-  useEffect(() => {
-    document.title = seo[language].title;
-
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      seo[language].description
-    );
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", window.location.origin + "/");
-  }, [language]);
-
   return (
     <div className="w-full">
       <Hero />

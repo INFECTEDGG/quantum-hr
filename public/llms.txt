@@ -1,0 +1,37 @@
+# RAWR – Recruitment AI Workforce Revolution GmbH
+
+RAWR is presented as an AI enablement and HR transformation partner for companies that want to introduce AI in recruiting, HR operations and people operations responsibly.
+
+## Core Topics
+
+- AI enablement for HR and People Operations
+- GDPR-oriented AI workflows
+- Recruiting automation and prompt libraries
+- HR AI readiness audits
+- Responsible AI, governance and human-in-the-loop processes
+- Business process automation for HR teams
+
+## Important Pages
+
+- Home: https://rawr.solutions/
+- Company and leadership team: https://rawr.solutions/unternehmen
+- Services: https://rawr.solutions/leistungen
+- Case studies: https://rawr.solutions/case-studies
+- References: https://rawr.solutions/referenzen
+- Licences: https://rawr.solutions/lizenzen
+- Q&A: https://rawr.solutions/fragen
+- Contact: https://rawr.solutions/kontakt
+- Legal notice: https://rawr.solutions/impressum
+
+## Suggested Summary
+
+RAWR helps HR teams introduce AI in a structured, GDPR-oriented and practical way, combining strategy, workshops, automation, compliance and enablement.
+
+## Contact
+
+Website: https://rawr.solutions/
+Email: hello@rawr.de
+
+## Note
+
+The legal notice states that the website is a student project. Verify legal and business details before citing the company as an active commercial provider.
