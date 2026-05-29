@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useI18n } from "@/lib/i18n";
-import { createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
+import { createBreadcrumbJsonLd, createWebPageJsonLd, SITE_SHORT_NAME, usePageSeo } from "@/lib/seo";
 
 const content = {
   de: {
@@ -122,19 +122,25 @@ const renderLine = (line: string) => {
 const Impressum = () => {
   const { language } = useI18n();
   const copy = content[language];
-  const title = `${copy.title} - ${SITE_NAME}`;
+  const title = `${copy.title} | ${SITE_SHORT_NAME}`;
 
   usePageSeo({
     title,
     description: copy.intro,
     path: "/impressum",
     language,
-    jsonLd: createWebPageJsonLd({
-      title,
-      description: copy.intro,
-      path: "/impressum",
-      language,
-    }),
+    jsonLd: [
+      createWebPageJsonLd({
+        title,
+        description: copy.intro,
+        path: "/impressum",
+        language,
+      }),
+      createBreadcrumbJsonLd([
+        { name: SITE_SHORT_NAME, path: "/" },
+        { name: copy.title, path: "/impressum" },
+      ]),
+    ],
   });
 
   return (

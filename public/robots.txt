@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /portal
-Disallow: /login
 
 Sitemap: https://rawr.solutions/sitemap.xml

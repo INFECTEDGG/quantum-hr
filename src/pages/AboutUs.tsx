@@ -7,13 +7,19 @@ import dafneImage from "@/assets/team/dafne-ummak.png";
 import soerenImage from "@/assets/team/soeren-geiger.png";
 import niklasImage from "@/assets/team/niklas-burchhardt.png";
 import { useI18n } from "@/lib/i18n";
-import { createWebPageJsonLd, organizationJsonLd, usePageSeo } from "@/lib/seo";
+import {
+  createBreadcrumbJsonLd,
+  createWebPageJsonLd,
+  organizationJsonLd,
+  SITE_SHORT_NAME,
+  usePageSeo,
+} from "@/lib/seo";
 
 const leaderImages = [maximilianImage, dafneImage, soerenImage, niklasImage];
 
 const content = {
   de: {
-    title: "Unternehmen - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Unternehmen & Team für KI im HR | RAWR",
     description:
       "RAWR verbindet HR, KI und Verantwortung: Unternehmensprofil, Arbeitsweise und Führungsteam für moderne HR-Abteilungen.",
     heroBadge: "UNTERNEHMEN",
@@ -85,7 +91,7 @@ const content = {
     imageAlt: "Portraitplatzhalter von",
   },
   en: {
-    title: "Company - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Company & Team for AI in HR | RAWR",
     description:
       "RAWR connects HR, AI and responsibility: company profile, way of working and leadership team for modern HR departments.",
     heroBadge: "COMPANY",
@@ -157,7 +163,7 @@ const content = {
     imageAlt: "Portrait placeholder for",
   },
   fr: {
-    title: "Entreprise - RAWR – Recruitment AI Workforce Revolution GmbH",
+    title: "Entreprise & équipe IA pour les RH | RAWR",
     description:
       "RAWR relie RH, IA et responsabilité : profil d'entreprise, méthode de travail et équipe dirigeante pour départements RH modernes.",
     heroBadge: "ENTREPRISE",
@@ -255,6 +261,10 @@ const AboutUs = () => {
         language,
         pageType: "AboutPage",
       }),
+      createBreadcrumbJsonLd([
+        { name: SITE_SHORT_NAME, path: "/" },
+        { name: copy.heroBadge, path: "/unternehmen" },
+      ]),
     ],
   });
 

@@ -16,11 +16,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { createWebPageJsonLd, organizationJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
+import {
+  createBreadcrumbJsonLd,
+  createWebPageJsonLd,
+  organizationJsonLd,
+  SITE_SHORT_NAME,
+  usePageSeo,
+} from "@/lib/seo";
 
 const content = {
   de: {
     title: "Kontaktieren Sie uns",
+    seoTitle: "Kontakt für KI-Enablement im HR | RAWR",
     intro:
       "Bereit für das nächste Level? Lassen Sie uns über Ihr Projekt sprechen. Füllen Sie das Formular aus und wir melden uns zeitnah.",
     nameRequired: "Bitte gib deinen Namen ein (min. 2 Zeichen).",
@@ -37,10 +44,11 @@ const content = {
     successDescription: "Wir werden uns so schnell wie möglich bei dir melden.",
     error: "Fehler beim Senden",
     errorDescription: "Bitte versuche es später noch einmal.",
-    jsonDescription: "KI-Enablement, HR-Automatisierung und verantwortungsvolle AI-Governance für moderne People Teams.",
+    jsonDescription: "Kontakt zu RAWR für KI-Enablement, HR-Automatisierung und verantwortungsvolle AI-Governance.",
   },
   en: {
     title: "Contact us",
+    seoTitle: "Contact for AI Enablement in HR | RAWR",
     intro:
       "Ready for the next level? Let us talk about your project. Fill out the form and we will get back to you shortly.",
     nameRequired: "Please enter your name (min. 2 characters).",
@@ -57,10 +65,11 @@ const content = {
     successDescription: "We will get back to you as soon as possible.",
     error: "Error while sending",
     errorDescription: "Please try again later.",
-    jsonDescription: "Experts in AI enablement and HR transformation.",
+    jsonDescription: "Contact RAWR for AI enablement, HR automation and responsible AI governance.",
   },
   fr: {
     title: "Contactez-nous",
+    seoTitle: "Contact pour l'enablement IA RH | RAWR",
     intro:
       "Prêt pour la prochaine étape ? Parlons de votre projet. Remplissez le formulaire et nous vous répondrons rapidement.",
     nameRequired: "Veuillez saisir votre nom (min. 2 caractères).",
@@ -77,14 +86,14 @@ const content = {
     successDescription: "Nous vous répondrons dès que possible.",
     error: "Erreur lors de l'envoi",
     errorDescription: "Veuillez réessayer plus tard.",
-    jsonDescription: "Experts en enablement IA et transformation RH.",
+    jsonDescription: "Contactez RAWR pour l'enablement IA, l'automatisation RH et la gouvernance IA responsable.",
   },
 };
 
 export default function Contact() {
   const { language, t } = useI18n();
   const copy = content[language];
-  const pageTitle = `${copy.title} - ${SITE_NAME}`;
+  const pageTitle = copy.seoTitle;
 
   usePageSeo({
     title: pageTitle,
@@ -100,6 +109,10 @@ export default function Contact() {
         language,
         pageType: "ContactPage",
       }),
+      createBreadcrumbJsonLd([
+        { name: SITE_SHORT_NAME, path: "/" },
+        { name: copy.title, path: "/kontakt" },
+      ]),
     ],
   });
 

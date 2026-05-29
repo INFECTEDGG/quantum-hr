@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { marketingPages, type MarketingPageKey } from "@/lib/marketing-pages";
 import { useI18n } from "@/lib/i18n";
-import { createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
+import { createBreadcrumbJsonLd, createWebPageJsonLd, SITE_SHORT_NAME, usePageSeo } from "@/lib/seo";
 
 const pageIcons: Record<MarketingPageKey, LucideIcon> = {
   references: UsersRound,
@@ -46,19 +46,26 @@ const MarketingPage = ({ pageKey }: MarketingPageProps) => {
   const { language } = useI18n();
   const page = marketingPages[language][pageKey];
   const PageIcon = pageIcons[pageKey];
-  const title = `${page.badge} - ${SITE_NAME}`;
+  const pageHeading = `${page.title} ${page.accent}`;
+  const title = `${pageHeading} | ${SITE_SHORT_NAME}`;
 
   usePageSeo({
     title,
     description: page.intro,
     path: page.path,
     language,
-    jsonLd: createWebPageJsonLd({
-      title,
-      description: page.intro,
-      path: page.path,
-      language,
-    }),
+    jsonLd: [
+      createWebPageJsonLd({
+        title,
+        description: page.intro,
+        path: page.path,
+        language,
+      }),
+      createBreadcrumbJsonLd([
+        { name: SITE_SHORT_NAME, path: "/" },
+        { name: page.badge, path: page.path },
+      ]),
+    ],
   });
 
   return (

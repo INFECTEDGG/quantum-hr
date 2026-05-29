@@ -9,23 +9,23 @@ import Testimonial from "@/components/landing/Testimonial";
 import FAQ from "@/components/landing/FAQ";
 import CTA from "@/components/landing/CTA";
 import { useI18n } from "@/lib/i18n";
-import { createWebPageJsonLd, usePageSeo, websiteJsonLd } from "@/lib/seo";
+import { createWebPageJsonLd, organizationJsonLd, usePageSeo, websiteJsonLd } from "@/lib/seo";
 
 const seo = {
   de: {
-    title: "RAWR – Recruitment AI Workforce Revolution GmbH — KI-Enablement für HR & People Operations",
+    title: "RAWR | KI-Enablement für HR & Recruiting",
     description:
-      "RAWR – Recruitment AI Workforce Revolution GmbH begleitet den Mittelstand bei der DSGVO-konformen Integration von KI in HR-Prozesse.",
+      "DSGVO-orientierte KI-Beratung für Recruiting, Talent Acquisition und People Operations im Mittelstand.",
   },
   en: {
-    title: "RAWR – Recruitment AI Workforce Revolution GmbH — AI enablement for HR & People Operations",
+    title: "RAWR | AI Enablement for HR & Recruiting",
     description:
-      "RAWR – Recruitment AI Workforce Revolution GmbH helps mid-market companies integrate AI into HR processes in a GDPR-compliant way.",
+      "GDPR-oriented AI consulting for recruiting, talent acquisition and people operations in mid-market companies.",
   },
   fr: {
-    title: "RAWR – Recruitment AI Workforce Revolution GmbH — Enablement IA pour RH & People Operations",
+    title: "RAWR | Enablement IA pour RH & Recruiting",
     description:
-      "RAWR – Recruitment AI Workforce Revolution GmbH accompagne les PME et ETI dans l'intégration conforme au RGPD de l'IA dans les processus RH.",
+      "Conseil IA orienté RGPD pour le recrutement, l'acquisition de talents et les people operations des PME et ETI.",
   },
 };
 
@@ -40,6 +40,7 @@ const Index = () => {
     path: "/",
     language,
     jsonLd: [
+      organizationJsonLd,
       websiteJsonLd,
       createWebPageJsonLd({
         title: pageSeo.title,

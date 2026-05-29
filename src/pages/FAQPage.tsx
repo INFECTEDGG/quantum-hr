@@ -10,12 +10,24 @@ import {
 import { Button } from "@/components/ui/button";
 import { faqContent } from "@/lib/faq-content";
 import { useI18n } from "@/lib/i18n";
-import { createFaqJsonLd, createWebPageJsonLd, SITE_NAME, usePageSeo } from "@/lib/seo";
+import {
+  createBreadcrumbJsonLd,
+  createFaqJsonLd,
+  createWebPageJsonLd,
+  SITE_SHORT_NAME,
+  usePageSeo,
+} from "@/lib/seo";
+
+const seoTitle = {
+  de: "FAQ zu KI im HR, DSGVO & Recruiting | RAWR",
+  en: "FAQ on AI in HR, GDPR & Recruiting | RAWR",
+  fr: "FAQ sur l'IA RH, le RGPD et le recrutement | RAWR",
+};
 
 const FAQPage = () => {
   const { language } = useI18n();
   const copy = faqContent[language];
-  const title = `${copy.badge} - ${SITE_NAME}`;
+  const title = seoTitle[language];
 
   usePageSeo({
     title,
@@ -31,6 +43,10 @@ const FAQPage = () => {
         pageType: "FAQPage",
       }),
       createFaqJsonLd(copy.questions),
+      createBreadcrumbJsonLd([
+        { name: SITE_SHORT_NAME, path: "/" },
+        { name: copy.badge, path: "/fragen" },
+      ]),
     ],
   });
 

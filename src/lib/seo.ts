@@ -5,6 +5,12 @@ export const SITE_URL = "https://rawr.solutions";
 export const SITE_NAME = "RAWR – Recruitment AI Workforce Revolution GmbH";
 export const SITE_SHORT_NAME = "RAWR";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/rawr-logo.png`;
+export const DEFAULT_OG_IMAGE_ALT =
+  "RAWR Logo - KI-Enablement für HR, Recruiting und People Operations";
+
+const INDEXABLE_ROBOTS_DIRECTIVES =
+  "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+const NON_INDEXABLE_ROBOTS_DIRECTIVES = "noindex, nofollow, noarchive";
 
 type JsonLd = Record<string, unknown> | Record<string, unknown>[];
 
@@ -25,6 +31,11 @@ type WebPageJsonLdOptions = {
   path: string;
   language: Language;
   pageType?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage";
+};
+
+type BreadcrumbItem = {
+  name: string;
+  path: string;
 };
 
 const HTML_LANG_BY_LANGUAGE: Record<Language, string> = {
@@ -154,8 +165,20 @@ export const createWebPageJsonLd = ({
     publisher: {
       "@id": `${SITE_URL}/#organization`,
     },
+    isAccessibleForFree: true,
   };
 };
+
+export const createBreadcrumbJsonLd = (items: BreadcrumbItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: absoluteUrl(item.path),
+  })),
+});
 
 export const createFaqJsonLd = (questions: [string, string][]) => ({
   "@context": "https://schema.org",
@@ -184,12 +207,17 @@ export const usePageSeo = ({
   const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 
   useEffect(() => {
+    const robotsDirectives = noIndex
+      ? NON_INDEXABLE_ROBOTS_DIRECTIVES
+      : INDEXABLE_ROBOTS_DIRECTIVES;
+
     document.documentElement.lang = HTML_LANG_BY_LANGUAGE[language];
     document.title = title;
 
     setCanonical(canonical);
     setMeta("name", "description", description);
-    setMeta("name", "robots", noIndex ? "noindex, nofollow" : "index, follow");
+    setMeta("name", "robots", robotsDirectives);
+    setMeta("name", "googlebot", robotsDirectives);
     setMeta("name", "author", SITE_NAME);
 
     setMeta("property", "og:type", type);
@@ -198,12 +226,17 @@ export const usePageSeo = ({
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonical);
     setMeta("property", "og:image", image);
+    setMeta("property", "og:image:secure_url", image);
+    setMeta("property", "og:image:alt", DEFAULT_OG_IMAGE_ALT);
+    setMeta("property", "og:image:width", "1254");
+    setMeta("property", "og:image:height", "1254");
     setMeta("property", "og:locale", OG_LOCALE_BY_LANGUAGE[language]);
 
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", image);
+    setMeta("name", "twitter:image:alt", DEFAULT_OG_IMAGE_ALT);
 
     setPageJsonLd(jsonLdString);
   }, [canonical, description, image, jsonLdString, language, noIndex, title, type]);

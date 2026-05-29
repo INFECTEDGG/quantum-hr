@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
-import { SITE_NAME, usePageSeo } from "@/lib/seo";
+import { SITE_SHORT_NAME, usePageSeo } from "@/lib/seo";
 
 const content = {
   de: { message: "Diese Seite wurde nicht gefunden", home: "Zurück zur Startseite" },
@@ -15,7 +15,7 @@ const NotFound = () => {
   const copy = content[language];
 
   usePageSeo({
-    title: `404 - ${SITE_NAME}`,
+    title: `404 | ${SITE_SHORT_NAME}`,
     description: copy.message,
     path: location.pathname,
     language,
